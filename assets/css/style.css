@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* fuente */
+/* paleta de colores */
+
+/* navegador */
+.nav {
+    background-color: red;
+    display: flex;
+    justify-content: flex start;
+}
