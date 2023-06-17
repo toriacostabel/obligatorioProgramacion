@@ -1,1 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: aqua;
+}
+.nav .navUl {
+  border: 1px solid black;
+  display: flex;
+  font-size: 20px;
+}
+.nav .navUl .navLi {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  list-style: none;
+}
+.nav .navUl .navLi .navLiA {
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+.nav .navUl .navLi .navLiA:hover {
+  color: grey;
+}
+
 /*# sourceMappingURL=style.css.map */
