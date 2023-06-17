@@ -3,12 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* fuente */
-/* paleta de colores */
 
-/* navegador */
+/* fuente */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/*  paleta de colores:
+    #27374D --- light navy blue
+    #526D82 --- light greyish blue
+    #9DB2BF --- pale greyish blue
+    #DDE6ED --- very pale baby blue
+*/ 
+
+/* --- DESKTOP VIEWPORT --- */
+
+/* --- NAVEGADOR --- */
+
 .nav {
-    background-color: red;
+    background-color: #27374D;
+    display: block;
+}
+.navLinks {
     display: flex;
-    justify-content: flex start;
+    margin: 0 0 0 5%;
+}
+.navA {
+    color: #DDE6ED;
+    padding: 1.2% 2%;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+}
+.navA:hover {
+    background-color: #526D82;
 }
