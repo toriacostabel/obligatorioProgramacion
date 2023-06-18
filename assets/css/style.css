@@ -4,26 +4,36 @@
     box-sizing: border-box;
 }
 
-/* fuente */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body {
-    font-family: 'Noto Sans', sans-serif;
-}
-
 /*  paleta de colores:
     #27374D --- light navy blue
     #526D82 --- light greyish blue
     #9DB2BF --- pale greyish blue
     #DDE6ED --- very pale baby blue
-*/ 
+*/
+
+/* fuente */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'Jura';
+    src: url(../fonts/Jura/Jura-VariableFont_wght.ttf);
+}
+
+/* body */
+body {
+    font-family: 'Jura';
+    height: 100%;
+    background: rgb(39,55,77);
+    background: linear-gradient(36deg, rgba(39,55,77,1) 0%, rgba(82,110,130,1) 56%, rgba(157,178,191,1) 100%);
+} 
 
 /* --- DESKTOP VIEWPORT --- */
 
 /* --- NAVEGADOR --- */
-
 .nav {
-    background-color: #27374D;
-    display: block;
+    background: rgb(39,55,77);
+    background: linear-gradient(36deg, rgba(39,55,77,1) 0%, rgba(82,110,130,1) 56%, rgba(157,178,191,1) 100%);
+    position: fixed;
+    width: 100vw;
 }
 .navLinks {
     display: flex;
@@ -31,13 +41,12 @@ body {
 }
 .navA {
     color: #DDE6ED;
-    padding: 1.2% 2%;
+    padding: 1.5% 2%;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.5em;
+    font-weight: 800;
+    font-size: 1.8em;
     letter-spacing: 0.2em;
 }
 .navA:hover {
     background-color: #526D82;
 }
-    
