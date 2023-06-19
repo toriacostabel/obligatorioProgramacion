@@ -13,7 +13,7 @@ function newData() {
             let mensaje = "ya existe";
         } else {
             const tmpMovie = movieData[i];
-            const tmpId = tmpMovie.getAttribute("data-id");
+            const tmpId = tmpMovie.getElementById("id");
             const tmpImg = tmpMovie.getAttribute("data-img")
             const tmpName = tmpMovie.getAttribute("data-name");
             const tmpYear = tmpMovie.getAttribute("data-year");
