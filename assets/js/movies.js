@@ -1,72 +1,73 @@
 // Obtiene los elementos de "movieForm" dentro de la lista de peliculas
-const movieData = document.getElementById("movieForm");
-// Obtiene los elementos de "movieGenres" dentro de la lista de peliculas
-const genreList = document.getElementsById("movieGenres");
-const movies = [];
+let movieData = document.querySelector(".movieForm");
+let movies = [];
 
+// Crea el objeto movie y carga los datos obtenidos
+function movieStrcture() {
+    let movie = {
+        id: tmpId,
+        img: tmpImg,
+        name: tmpName,
+        year: tmpYear,
+        cost: tmpCost,
+        genre1: tmpGenre1,
+        genre2: tmpGenre2,
+        genre3: tmpGenre3,
+        director: tmpDirector
+    };
+}
 // Función para cargar peliculas desde el HTML
 function newData() {
     // Recorre los elementos y extrae los datos
     for (let i = 0; i < movieData.length; i++) {
         // Creo un objeto con todos los datos obetnidos en cada iteracion del array
-        if (movieData.id === movies.id) {
-            let mensaje = "ya existe";
-        } else {
-            const tmpMovie = movieData[i];
-            const tmpId = tmpMovie.getElementById("id");
-            const tmpImg = tmpMovie.getAttribute("data-img")
-            const tmpName = tmpMovie.getAttribute("data-name");
-            const tmpYear = tmpMovie.getAttribute("data-year");
-            // Crea un array de géneros para luego agregarlos al Array movie
-            const tmpGenres = [
-                tmpMovie.getAttribute("data-genre1"),
-                tmpMovie.getAttribute("data-genre2"),
-                tmpMovie.getAttribute("data-genre3")
-            ];
-            const tmpDirector = tmpMovie.getAttribute("data-director");
-
-            // Crea el objeto movie y carga los datos obtenidos
-            const movie = {
-                id: tmpId,
-                img: tmpImg,
-                name: tmpName,
-                year: tmpYear,
-                genres: tmpGenres,
-                director: tmpDirector
-            };
-            return movie;
+        let tmpMovie = movieData[i];
+        let tmpId = tmpMovie.getElementById("id");
+        let tmpImg = tmpMovie.getElementById("img")
+        let tmpName = tmpMovie.getElementById("name");
+        let tmpYear = tmpMovie.getElementById("year");
+        let tmpCost = tmpMovie.getElementById("price");
+        let tmpGenre1 = tmpMovie.getElementById("genre1");
+        let tmpGenre2 = tmpMovie.getElementById("genre2");
+        let tmpGenre3 = tmpMovie.getElementById("genre3");
+        let tmpDirector = tmpMovie.getElementById("director");
+        return movieStrcture();
+    }
+}
+// Función para dar alta de película
+function newMovie() {
+    for (let i = 0; i < movies.length; i++) {
+        let tmpMovie = array[i];
+        if (newData()[0] != tmpMovie[0]) {
+            movies.push(newData());
         }
     }
 }
-
-function newMovie() {
-    movies.push(newData());
-    // for (let i = 0; i < movies.length; i++) {
-    //     const tmpMovie = array[i];
-    //     if (newData()[0] != tmpMovie[0]) {           
-    //     }
-    // }
-}
-
+// Función para leer y mostrar película
 function readMovie() {
-    const tmpId = document.getElementById("movieID").value;
+    let tmpId = document.getElementById("movieID");
     // Buscar la película por su id
     for (let i = 0; i < movies.length; i++) {
         tmpMovie = movies[i];
-        if (tmpMovie.id === tmpId) {
-            document.getElementById("movieName").textContent = tmpMovie.id;
-            document.getElementById("movieName").textContent = tmpMovie.img;
-            document.getElementById("movieName").textContent = tmpMovie.name;
-            document.getElementById("movieYear").textContent = tmpMovie.year;
-            document.getElementById("movieYear").textContent = tmpMovie.genres;
-            document.getElementById("movieYear").textContent = tmpMovie.director;
-            return;
+        if (tmpMovie[i][0] === tmpId) {
+            return
+            `<div class="div-card">
+            <div class="id"><p>${tmpMovie.id}</p></div>
+            <div class="imagen"><img src='${tmpMovie.img}'></img></div>
+                <div class="name"><p>${tmpMovie.name}</p></div>
+                    <div class="year"><p>${tmpMovie.year}</p></div>
+                        <div class="cost"><p>${tmpMovie.price}</p></div>
+                            <div class="genre1"><p>${tmpMovie.genre1}</p></div>
+                                <div class="genre2"><p>${tmpMovie.genre2}</p></div>
+                                    <div class="genre3"><p>${tmpMovie.genre3}</p></div>
+                                        <div class="director"><p>${tmpMovie.director}</p></div>
+                                        </div>`;
         }
     }
 }
 function updateMovie() {
-    const movie = movies.find(movie => movie.id === id);
-    const movieData = movieList.getElementsByClassName("movie");
+    let movie = movies.find(movie => movie.id === id);
+    let movieData = movieList.getElementsByClassName("movie");
 
     for (let i = 0; i < movieData.length; i++) {
         const tmpMovie = array[i];
@@ -78,25 +79,5 @@ function updateMovie() {
 
 }
 
-function deleteMovie() { // Obtener los elementos "movie" dentro de la lista de peliculas
-    const movieData = movieList.getElementsByTagName("movie");
-
-    // Recorrer los elementos y extraer los datos
-    for (let i = 0; i < movieData.length; i++) {
-        const tmpMovie = movieData[i];
-        const id = parseInt(tmpMovie.getAttribute("data-id"));
-        const img = tmpMovie.getAttribute("data-img")
-        const name = tmpMovie.getAttribute("data-name");
-        const year = parseInt(tmpMovie.getAttribute("data-year"));
-        const genre = tmpMovie.getAttribute("data-genre");
-        const director = tmpMovie.getAttribute("data-director");
-
-        // Crear el objeto persona y agregarlo al arreglo
-        const movie = { id, name, year, genre, director: [] };
-        movies.push(movie);
-    }
+function deleteMovie() {
 }
-function getGenre()
-genre = tmpMovie.getAttribute("data-genre");
-// Llamar a las funciones para cargar los datos desde el HTML
-loadMovies();
