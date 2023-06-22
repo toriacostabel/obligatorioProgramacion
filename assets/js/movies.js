@@ -1,7 +1,7 @@
 // Obtiene los elementos de "movieForm" dentro de la lista de peliculas
-const movieData = document.getElementById("movieForm");
+const movieData = document.querySelectorAll(".movieForm");
 // Obtiene los elementos de "movieGenres" dentro de la lista de peliculas
-const genreList = document.getElementsById("movieGenres");
+const genreList = document.querySelectorAll(".movieGenres");
 const movies = [];
 
 // Función para cargar peliculas desde el HTML
@@ -9,21 +9,16 @@ function newData() {
     // Recorre los elementos y extrae los datos
     for (let i = 0; i < movieData.length; i++) {
         // Creo un objeto con todos los datos obetnidos en cada iteracion del array
-        if (movieData.id === movies.id) {
-            let mensaje = "ya existe";
-        } else {
-            const tmpMovie = movieData[i];
-            const tmpId = tmpMovie.getElementById("id");
-            const tmpImg = tmpMovie.getAttribute("data-img")
-            const tmpName = tmpMovie.getAttribute("data-name");
-            const tmpYear = tmpMovie.getAttribute("data-year");
-            // Crea un array de géneros para luego agregarlos al Array movie
-            const tmpGenres = [
-                tmpMovie.getAttribute("data-genre1"),
-                tmpMovie.getAttribute("data-genre2"),
-                tmpMovie.getAttribute("data-genre3")
-            ];
-            const tmpDirector = tmpMovie.getAttribute("data-director");
+        if (movieData[i].id != movies[i].id) {
+            const tmpId = movieData[i].querySelector("#id").value;
+            const tmpImg = movieData[i].querySelector("#img").value;
+            const tmpName = movieData[i].querySelector("#name").value;
+            const tmpYear = movieData[i].querySelector("#year").value;
+            const tmpGenre1 = movieData[i].querySelector("#genre1").value;
+            const tmpGenre2 = movieData[i].querySelector("#genre2").value;
+            const tmpGenre3 = movieData[i].querySelector("#genre3").value;
+            const tmpDirector = movieData[i].querySelector("#director").value;
+            const tmpPrice = movieData[i].querySelector("#price").value;
 
             // Crea el objeto movie y carga los datos obtenidos
             const movie = {
@@ -31,10 +26,16 @@ function newData() {
                 img: tmpImg,
                 name: tmpName,
                 year: tmpYear,
-                genres: tmpGenres,
-                director: tmpDirector
+                genre1: tmpGenre1,
+                genre2: tmpGenre2,
+                genre3: tmpGenre3,
+                director: tmpDirector,
+                precio: tmpPrice
             };
             return movie;
+        } else {
+            let mensaje = "La película ingresada ya existe";
+            break;
         }
     }
 }
@@ -52,14 +53,15 @@ function readMovie() {
     const tmpId = document.getElementById("movieID").value;
     // Buscar la película por su id
     for (let i = 0; i < movies.length; i++) {
-        tmpMovie = movies[i];
-        if (tmpMovie.id === tmpId) {
-            document.getElementById("movieName").textContent = tmpMovie.id;
-            document.getElementById("movieName").textContent = tmpMovie.img;
-            document.getElementById("movieName").textContent = tmpMovie.name;
-            document.getElementById("movieYear").textContent = tmpMovie.year;
-            document.getElementById("movieYear").textContent = tmpMovie.genres;
-            document.getElementById("movieYear").textContent = tmpMovie.director;
+        let tmpMovies = movies;
+        if (tmpMovies[i].id === tmpId) {
+            document.getElementById("id").textContent = tmpMovies[i].id;
+            document.getElementById("img").textContent = tmpMovies[i].img;
+            document.getElementById("name").textContent = tmpMovies[i].name;
+            document.getElementById("year").textContent = tmpMovies[i].year;
+            document.getElementById("genres").textContent = tmpMovies[i].genres;
+            document.getElementById("director").textContent = tmpMovies[i].director;
+            document.getElementById("price").textContent = tmpMovies[i].price;
             return;
         }
     }
@@ -79,24 +81,8 @@ function updateMovie() {
 }
 
 function deleteMovie() { // Obtener los elementos "movie" dentro de la lista de peliculas
-    const movieData = movieList.getElementsByTagName("movie");
 
-    // Recorrer los elementos y extraer los datos
-    for (let i = 0; i < movieData.length; i++) {
-        const tmpMovie = movieData[i];
-        const id = parseInt(tmpMovie.getAttribute("data-id"));
-        const img = tmpMovie.getAttribute("data-img")
-        const name = tmpMovie.getAttribute("data-name");
-        const year = parseInt(tmpMovie.getAttribute("data-year"));
-        const genre = tmpMovie.getAttribute("data-genre");
-        const director = tmpMovie.getAttribute("data-director");
-
-        // Crear el objeto persona y agregarlo al arreglo
-        const movie = { id, name, year, genre, director: [] };
-        movies.push(movie);
-    }
 }
 function getGenre()
-genre = tmpMovie.getAttribute("data-genre");
+genre = tmpMovie.getAttribute("genre");
 // Llamar a las funciones para cargar los datos desde el HTML
-loadMovies();
