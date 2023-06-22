@@ -1,5 +1,5 @@
 // Obtiene los elementos de "movieForm" dentro de la lista de peliculas
-let movieData = document.querySelector(".movieForm");
+let movieData = document.getElementById(".movieForm");
 let movies = [];
 
 // Crea el objeto movie y carga los datos obtenidos
@@ -13,6 +13,7 @@ function movieStrcture() {
         genre1: tmpGenre1,
         genre2: tmpGenre2,
         genre3: tmpGenre3,
+        rate: tmpRate,
         director: tmpDirector
     };
 }
@@ -30,6 +31,7 @@ function newData() {
         let tmpGenre1 = tmpMovie.getElementById("genre1");
         let tmpGenre2 = tmpMovie.getElementById("genre2");
         let tmpGenre3 = tmpMovie.getElementById("genre3");
+        let tmpRate = tmpMovie.getElementById("rate");
         let tmpDirector = tmpMovie.getElementById("director");
         return movieStrcture();
     }
@@ -51,17 +53,19 @@ function readMovie() {
         tmpMovie = movies[i];
         if (tmpMovie[i][0] === tmpId) {
             return
-            `<div class="div-card">
-            <div class="id"><p>${tmpMovie.id}</p></div>
-            <div class="imagen"><img src='${tmpMovie.img}'></img></div>
+            `<div class="div-movieCard">
+                <div class="id"><p>${tmpMovie.id}</p></div>
+                <div class="imagen"><img src='${tmpMovie.img}'></img></div>
                 <div class="name"><p>${tmpMovie.name}</p></div>
-                    <div class="year"><p>${tmpMovie.year}</p></div>
-                        <div class="cost"><p>${tmpMovie.price}</p></div>
-                            <div class="genre1"><p>${tmpMovie.genre1}</p></div>
-                                <div class="genre2"><p>${tmpMovie.genre2}</p></div>
-                                    <div class="genre3"><p>${tmpMovie.genre3}</p></div>
-                                        <div class="director"><p>${tmpMovie.director}</p></div>
-                                        </div>`;
+                <div class="year"><p>${tmpMovie.year}</p></div>
+                <div class="cost"><p>${tmpMovie.cost}</p></div>
+                <div class="genre1"><p>${tmpMovie.genre1}</p></div>
+                <div class="genre2"><p>${tmpMovie.genre2}</p></div>
+                <div class="genre3"><p>${tmpMovie.genre3}</p></div>
+                <div class="rate"><p>${tmpMovie.rate}</p></div>
+                <div class="director"><p>${tmpMovie.director}</p></div>
+            </div>`
+                ;
         }
     }
 }

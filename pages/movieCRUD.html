@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="must watch, streaming, peliculas, movies, cine, cartelera, cinema"
+    />
+    <meta
+      name="description"
+      content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas."
+    />
+    <link rel="stylesheet" href="/assets/scss/style.css" />
+    <script src="../assets/js/movieCRUD.js"></script>
+    <title>Must Watch - Settings</title>
+  </head>
+  <body class="body" id="bodySettings">
+    <!-- NAVEGADOR -->
+    <nav class="nav" id="navSettings">
+      <div class="navLinks" id="navLinks">
+        <a href="../index.html" class="navA" id="aHome">Home</a>
+        <a href="./movieStats.html" class="navA" id="aSales">Sales</a>
+        <a href="./movieCRUD.html" class="navA" id="aCrud">Settings</a>
+      </div>
+    </nav>
+    <h1>Listado de películas</h1>
+    <div id="movieList">
+      <!-- Placeholder para mostrar las películas cargadas -->
+    </div>
+
+    <h2>Ingresar nueva película</h2>
+    <form class="movieForm">
+      <div>
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required /><br />
+
+        <label for="poster">Poster:</label>
+        <input type="checkbox" id="imagen" onchange="mostrarCampo()" />
+        <br />
+
+        <script>
+          function mostrarCampo() {
+            let checkbox = document.getElementById("campoUrl");
+            let campo = document.getElementById("campoAdicional");
+            if (checkbox.checked) {
+              <input type="file" id="imgFile" />;
+            } else {
+              <input type="url" id="imgURL"/>;
+            }
+          }
+        </script>
+
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="date">Año:</label>
+        <input type="date" id="year" name="year" required /><br />
+
+        <label for="cost">Precio:</label>
+        <input type="number" id="cost" name="cost" required /><br />
+
+        <label for="genre1">Género 1:</label>
+        <input type="text" id="genre1" name="genre1" required /><br />
+
+        <label for="genre2">Género 2:</label>
+        <input type="text" id="genre2" name="genre2" required /><br />
+
+        <label for="genre3">Género 3:</label>
+        <input type="text" id="genre3" name="genre3" required /><br />
+
+        <label for="rate">Calificación:</label>
+        <input type="number" id="rate" name="rate" required /><br />
+
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required /><br />
+        <br /><button onclick="newMovie()">Agregar película</button>
+      </div>
+    </form>
+
+    <form id="movieID">
+      <div>
+        <br /><input type="text" id="movieId" name="movieId" required /><br />
+        <label for="name">Identificador película:</label><br />
+        <br /><button onclick="readMovie()">Mostrar películas</button>
+      </div>
+      <div class="CRUDcarousel"></div>
+    </form>
+
+    <!-- ENCABEZADO -->
+    <header class="header" id="headerSettings"></header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main" id="mainSettings">
+      <p>estamos en la configuracion</p>
+    </main>
+
+    <!-- APARTADO -->
+    <aside class="aside" id="asideSettings"></aside>
+
+    <!-- PIE DE PAGINA -->
+    <footer class="footer" id="footerSettings"></footer>
+  </body>
+</html>
