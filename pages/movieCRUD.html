@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="must watch, streaming, peliculas, movies, cine, cartelera, cinema"/>
+    <meta name="description" content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas."/>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <script src="../assets/js/movieCRUD.js"></script>
+    <title>Must Watch - Settings</title>
+  </head>
+
+  <body class="body" id="bodySettings">
+  <!-- NAVEGADOR -->
+    <nav class="nav" id="navSettings">
+      <div class="navLinks" id="navLinks">
+        <a href="../index.html" class="navA" id="aHome">Home</a>
+        <a href="./movieStats.html" class="navA" id="aSales">Sales</a>
+        <a href="./movieCRUD.html" class="navA" id="aCrud">Settings</a>
+      </div>
+    </nav>
+
+    <!-- ENCABEZADO -->
+    <header class="header" id="headerSettings"></header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main" id="mainSettings">
+
+      <!-- form to upload new movie-->
+      <form action="post" class="newMovieForm" id="newMovieForm">
+
+        <div class="movieFormInput newMovieId" id="newMovieId">
+          <label for="movieID">ID:</label>
+          <input type="number" class="movieID" id="movieID" required >
+        </div>
+
+        <div class="movieFormInput newMovieName" id="newMovieName">
+          <label for="movieName">Nombre:</label>
+          <input type="text" class="movieName" id="movieName" required>
+        </div>
+
+
+        <div class="movieFormInput newMovieYear" id="newMovieYear">
+          <label for="movieYear">Año:</label>
+          <input type="date" class="movieYear" id="movieYear" required>
+        </div>
+
+
+        <div class="movieFormInput newMovieDirector" id="newMovieDirector">
+          <label for="movieDirector">Director:</label>
+          <input type="text" class="movieDirector" id="movieDirector" required>
+        </div>
+
+        <div class="movieFormInput newMoviePrice" id="newMoviePrice">
+          <label for="moviePrice">Precio:</label>
+          <input type="number" class="moviePrice" id="moviePrice" required>
+        </div>
+
+      </form>
+    </main>
+
+    <!-- APARTADO -->
+    <aside class="aside" id="asideSettings"></aside>
+
+    <!-- PIE DE PAGINA -->
+    <footer class="footer" id="footerSettings"></footer>
+  </body>
+</html>
