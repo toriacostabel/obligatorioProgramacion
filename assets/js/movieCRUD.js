@@ -17,11 +17,46 @@ function movieStrcture() {
         director: tmpDirector
     };
 }
+function allowDrop(event) {
+    event.preventDefault();
+  }
+
+  function handleDrop(event) {
+    event.preventDefault();
+
+    // Obtener el archivo de la imagen arrastrada
+    let file = event.dataTransfer.files[0];
+
+    // Hacer algo con el archivo, como mostrar su nombre o procesarlo
+    showFileName(file.name);
+  }
+
+  function handleImage(event) {
+    // Obtener el archivo de la imagen seleccionada desde el campo de archivo
+    let file = event.target.files[0];
+
+    // Hacer algo con el archivo, como mostrar su nombre o procesarlo
+    showFileName(file.name);
+  }
+
+  function showFileName(fileName) {
+    let fileNameElement = document.getElementById("file-name");
+    if (fileName) {
+      fileNameElement.textContent = "Archivo seleccionado: " + fileName;
+    } else {
+      fileNameElement.textContent = "No se ha seleccionado ningún archivo.";
+    }
+  }
+
+  function openFileChooser() {
+    // Abrir el campo de archivo al hacer clic en el botón
+    document.getElementById("imageInput").click();
+  }
 // Función para cargar peliculas desde el HTML
 function newData() {
     // Recorre los elementos y extrae los datos
     for (let i = 0; i < movieData.length; i++) {
-        // Creo un objeto con todos los datos obetnidos en cada iteracion del array
+        // Creo un objeto con todos los datos obtenidos en cada iteracion del array
         let tmpMovie = movieData[i];
         let tmpId = tmpMovie.getElementById("id");
         let tmpImg = tmpMovie.getElementById("img")

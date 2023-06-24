@@ -171,3 +171,4 @@ body {
 .movieInformation:not(:hover) {
   animation: fadeDownOut 0.3s forwards;
 }
+
