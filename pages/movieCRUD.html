@@ -29,34 +29,33 @@
 
       <!-- form to upload new movie-->
       <form action="post" class="newMovieForm" id="newMovieForm">
-
-        <div class="movieFormInput newMovieId" id="newMovieId">
+        <!-- movie id -->
+        <div class="inputContainer newMovieId" id="newMovieId">
           <label for="movieID">ID:</label>
-          <input type="number" class="movieID" id="movieID" required >
+          <input type="number" class="newMovieInput movieID" id="movieID" placeholder="Ingresa un codigo" required>
         </div>
-
-        <div class="movieFormInput newMovieName" id="newMovieName">
+        <!-- movie name -->
+        <div class="inputContainer newMovieName" id="newMovieName">
           <label for="movieName">Nombre:</label>
-          <input type="text" class="movieName" id="movieName" required>
+          <input type="text" class="newMovieInput movieName" id="movieName" placeholder="Nombre de la pelicula" required>
         </div>
-
-
-        <div class="movieFormInput newMovieYear" id="newMovieYear">
+        <!-- movie year-->
+        <div class="inputContainer newMovieYear" id="newMovieYear">
           <label for="movieYear">Año:</label>
-          <input type="date" class="movieYear" id="movieYear" required>
+          <input type="year" class="newMovieInput movieYear" id="movieYear" placeholder="Año de estreno" required>
         </div>
-
-
-        <div class="movieFormInput newMovieDirector" id="newMovieDirector">
+        <!-- movie director -->
+        <div class="inputContainer newMovieDirector" id="newMovieDirector">
           <label for="movieDirector">Director:</label>
-          <input type="text" class="movieDirector" id="movieDirector" required>
+          <input type="text" class="newMovieInput movieDirector" id="movieDirector" placeholder="Nombre del director" required>
         </div>
-
-        <div class="movieFormInput newMoviePrice" id="newMoviePrice">
+        <!-- movie price -->
+        <div class="inputContainer newMoviePrice" id="newMoviePrice">
           <label for="moviePrice">Precio:</label>
-          <input type="number" class="moviePrice" id="moviePrice" required>
+          <input type="number" class="newMovieInput moviePrice" id="moviePrice" placeholder="Precio de la pelicula" required>
         </div>
-
+        <!-- movie poster -->
+        
       </form>
     </main>
 

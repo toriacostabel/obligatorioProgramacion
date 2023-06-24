@@ -108,7 +108,32 @@ body {
 }
 
 /* --- ABM form --- */
- 
+#bodySettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newMovieForm {
+    border: 1px solid white;
+    width: 80vw;
+    height: 70vh;
+}
+.inputContainer {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.newMovieInput {
+    font-style: italic;
+    color: #27374D;
+    border: none;
+    outline: none;
+    border-radius: 5em;
+    padding: 2%;
+    font-size: 1em;
+    background-color: ;
+}
 
 /* --- animation for the movie information --- */
 @keyframes fadeUp {
