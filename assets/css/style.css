@@ -71,6 +71,7 @@ body {
 .navA:hover {
   background-color: #526d82;
 }
+
 /* --- CAROUSEL DE PELICULAS --- */
 
 .movie {
@@ -115,8 +116,8 @@ body {
 }
 .newMovieForm {
     border: 1px solid white;
-    width: 80vw;
-    height: 70vh;
+    width: 60vw;
+    height: 60vh;
 }
 .inputContainer {
     border: 1px solid black;
@@ -132,7 +133,10 @@ body {
     border-radius: 5em;
     padding: 2%;
     font-size: 1em;
-    background-color: ;
+    background-color: #dde6ed;
+}
+.cargarImagen{
+  
 }
 
 /* --- animation for the movie information --- */
