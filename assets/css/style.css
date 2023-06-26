@@ -35,7 +35,7 @@ body {
 
 .main {
   height: 100vh;
-  margin-top: 75px;
+  margin-top: 45px;
   padding-top: 20px;
 }
 
@@ -61,10 +61,10 @@ body {
 }
 .navA {
   color: #dde6ed;
-  padding: 1.5% 2%;
+  padding: 0.8%;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.8em;
+  font-size: 1.2em;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -75,9 +75,10 @@ body {
 /* --- CAROUSEL DE PELICULAS --- */
 
 .movie {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 1%;
-  width: 18vw;
-  height: 56vh;
+  width: 14vw;
+  height: 44vh;
   background-image: url(../img/jaws.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,47 +110,63 @@ body {
 }
 
 /* --- ABM form --- */
-#bodySettings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .newMovieForm {
-    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    border: 1px; ;
+    margin-top: 0.5%;
+    margin-left: 1%;
     width: 60vw;
     height: 60vh;
 }
 .inputContainer {
-    border: 1px solid black;
     display: flex;
-    flex-direction: column;
-    padding: 1%;
+    flex-direction: column;    
+    width: 50%;
+    height: 50px;
+    margin-bottom: 5px;
 }
+
 .newMovieInput {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-style: italic;
     color: #27374D;
     border: none;
     outline: none;
-    border-radius: 5em;
+    border-radius: 0.7em;
     padding: 2%;
     font-size: 1em;
     background-color: #dde6ed;
 }
-.cargarImagen{
-  
-}
+  /* Drop Img */
+  .dropZone {
+    border: 2px dashed #ccc;
+    padding: 80px;
+    text-align: center;
+    cursor: pointer;
+  }
 
-/* --- animation for the movie information --- */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+  
+  /* Estilos para el párrafo de información de la imagen */
+  #imageInfo {
+    margin-top: 10px;
+    font-style: italic;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  #urlInput {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+    color: #27374D;
+    border: none;
+    outline: none;
+    border-radius: 0.7em;
+    padding: 2%;
+    font-size: 1em;
+    background-color: #dde6ed;
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
+    height: 50px;
   }
-}
 
 @keyframes fadeDownOut {
   0% {
@@ -168,11 +185,10 @@ body {
 }
 
 .movieInformation:hover {
-  opacity: 0.5;
-  animation: fadeUp 0.3s forwards;
+  opacity: 3;
+  animation: fadeUp 0.5s forwards;
 }
 
 .movieInformation:not(:hover) {
   animation: fadeDownOut 0.3s forwards;
 }
-
