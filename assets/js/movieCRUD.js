@@ -2,6 +2,7 @@
 let movieData = document.getElementById(".movieForm");
 let movies = [];
 
+
 // Crea el objeto movie y carga los datos obtenidos
 function movieStrcture() {
     let movie = {
@@ -16,36 +17,49 @@ function movieStrcture() {
         rate: tmpRate,
         director: tmpDirector
     };
+
+    return movie;
 }
-// Función para cargar peliculas desde el HTML
+
+// Función para cargar películas desde el HTML
 function newData() {
+    let movieData = [];
+
     // Recorre los elementos y extrae los datos
-    for (let i = 0; i < movieData.length; i++) {
-        // Creo un objeto con todos los datos obtenidos en cada iteracion del array
-        let tmpMovie = movieData[i];
-        let tmpId = tmpMovie.getElementById("id");
-        let tmpImg = tmpMovie.getElementById("img")
-        let tmpName = tmpMovie.getElementById("name");
-        let tmpYear = tmpMovie.getElementById("year");
-        let tmpCost = tmpMovie.getElementById("price");
-        let tmpGenre1 = tmpMovie.getElementById("genre1");
-        let tmpGenre2 = tmpMovie.getElementById("genre2");
-        let tmpGenre3 = tmpMovie.getElementById("genre3");
-        let tmpRate = tmpMovie.getElementById("rate");
-        let tmpDirector = tmpMovie.getElementById("director");
-        return movieStrcture();
-    }
+    let tmpId = document.getElementById(movieID);
+    let tmpImg = document.getElementById(movieUrl);
+    let tmpName = document.getElementById(movieName);
+    let tmpYear = document.getElementById(movieYear);
+    let tmpCost = document.getElementById(movieCost);
+    let tmpGenre1 = document.getElementById(movieGenre1);
+    let tmpGenre2 = document.getElementById(movieGenre2);
+    let tmpGenre3 = document.getElementById(movieGenre3);
+    let tmpRate = document.getElementById(rate);
+    let tmpDirector = document.getElementById(movieDirector);
+
+    let movie = movieStructure(
+        tmpId,
+        tmpImg,
+        tmpName,
+        tmpYear,
+        tmpCost,
+        tmpGenre1,
+        tmpGenre2,
+        tmpGenre3,
+        tmpRate,
+        tmpDirector
+    );
+    return movies; // Devuelve el array de películas
 }
+
 // Función para dar alta de película
 function newMovie() {
-    for (let i = 0; i < movies.length; i++) {
-        let tmpMovie = array[i];
-        if (newData()[0] != tmpMovie[0]) {
-            movies.push(newData());
-        }
-    }
+    // Guardar los datos en el Local Storage
+    localStorage.setItem('movies', JSON.stringify(movies));
 }
+
 // Función para leer y mostrar película
+
 function readMovie() {
     let tmpId = document.getElementById("movieID");
     // Buscar la película por su id

@@ -44,22 +44,45 @@
                 <div class="inputContainer newMovieYear" id="newMovieYear">
                     <input type="year" class="newMovieInput movieYear" id="movieYear" placeholder="Año de estreno" required>
                 </div>
+                <!-- movie cost -->
+                <div class="inputContainer newMovieCost" id="newMovieCost">
+                    <input type="number" class="newMovieInput movieCost" id="movieCost" placeholder="Precio de la pelicula" required>
+                </div>
+                <!--movie genres-->
+                <div class="inputContainer newMovieGenre1" id="newMovieGenre1">
+                    <input type="text" class="newMovieInput movieGenre1" id="movieGenre1" placeholder="Ingresa un género" required>
+                </div>
+                <div class="inputContainer newMovieGenre2" id="newMovieGenre2">
+                    <input type="text" class="newMovieInput movieGenre2" id="movieGenre2" placeholder="Ingresa un género" required>
+                </div>
+                <div class="inputContainer newMovieGenre3" id="newMovieGenre3">
+                    <input type="text" class="newMovieInput movieGenre3" id="movieGenre3" placeholder="Ingresa un género" required>
+                </div>
+                <!-- movie rate-->
+                <div class="inputContainer newMovieRate" id="newMovieRate">
+                    <input type="number 1-5" class="newMovieInput newMovieRate" id="MovieRate" placeholder="Ingresa una calificacion" required>
+                </div>
                 <!-- movie director -->
                 <div class="inputContainer newMovieDirector" id="newMovieDirector">
                     <input type="text" class="newMovieInput movieDirector" id="movieDirector" placeholder="Nombre del director" required>
-                </div>
-                <!-- movie price -->
-                <div class="inputContainer newMoviePrice" id="newMoviePrice">
-                    <input type="number" class="newMovieInput moviePrice" id="moviePrice" placeholder="Precio de la pelicula" required>
                 </div>
                 <!-- movie poster -->
                 <div class="inputContainer dropZone" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
                     <p>Arrastra y suelta aquí</p>
                     <div class="newMovieUrl" id="newMovieUrl">
-                        <input type="text" id="urlInput" oninput="handleInputChange()" placeholder="Ingresa la URL">
+                        <input type="text" id="movieUrl" oninput="handleInputChange()" placeholder="Ingresa la URL">
                     </div>
                     <p id="imageInfo"></p>
                 </div>
+                <!-- Botón para agregar película -->
+                <button onclick="agregarPelicula()">Agregar Película</button>
+
+                <script>
+                    function agregarPelicula() {
+                        newMovie();
+                        alert("Película agregada exitosamente.");
+                    }
+                </script>
             </form>
         </body>
     </body>
