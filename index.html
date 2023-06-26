@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
@@ -10,6 +11,8 @@
         <!-- stylesheet -->
         <link
         rel="stylesheet" href="./assets/css/style.css"/>
+        <!-- icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- javascript-->
         <script src="./assets/js/main.js"></script>
         <script src="./assets/js/nav.js"></script>
@@ -17,16 +20,17 @@
 
     <body
         class="body" id="bodyIndex">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- NAVEGADOR -->
         <nav
-            class="nav" id="navIndex">
-
+            class="nav" id="navbar">
             <!-- menu principal -->
-            <div class="navLinks" id="navLinks">
-                <a href="./index.html" class="navA" id="aHome">HOME</a>
-                <a href="./pages/movieStats.html" class="navA" id="aSales">SALES</a>
-                <a href="./pages/movieCRUD.html" class="navA" id="aCrud">SETTINGS</a>
-            </div>
+            <a href="./index.html" class="navA" id="aHome">HOME</a>
+            <a href="#sales" class="navA" id="aSales">SALES</a>
+            <a href="./pages/movieCRUD.html" class="navA" id="aCrud">SETTINGS</a>
+            <a href="javascript:void(0);" class="icon" onclick="navbarResponsive()">
+                <i class="fa fa-bars"></i>
+            </a>
         </nav>
 
         <!-- ENCABEZADO -->
@@ -49,6 +53,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="sales" id="sales">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste mollitia nobis accusamus modi repudiandae maiores voluptatibus blanditiis ad voluptatum obcaecati illo nesciunt, necessitatibus, magnam quae iure atque enim. Cumque, labore fuga nemo excepturi quas neque sed iure maxime aut voluptas dignissimos, quos, consequatur sit non. Tenetur ea vero itaque minima. Rerum, asperiores, voluptatem nemo dignissimos excepturi error, quisquam accusantium unde totam quasi repudiandae at saepe consequatur consectetur numquam tempore. A similique sint modi blanditiis quod nobis odit molestiae! Ab aspernatur expedita pariatur iste alias? Officiis eveniet totam culpa sint?</p>
             </div>
         </main>
 

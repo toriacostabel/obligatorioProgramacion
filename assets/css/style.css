@@ -53,12 +53,10 @@ body {
   position: fixed;
   top: 0;
   width: 100vw;
+  display: flex;
   z-index: 100;
 }
-.navLinks {
-  display: flex;
-  margin: 0 0 0 5%;
-}
+
 .navA {
   color: #dde6ed;
   padding: 0.8%;
@@ -71,14 +69,60 @@ body {
 .navA:hover {
   background-color: #526d82;
 }
+/* added active class to highlight the current page */
+.navA.active {
+  background-color: rgba(82, 110, 130, 1);
+  color: white;
+}
+.icon {
+  display: none;
+}
+/* on small screens */
+@media screen and (max-width: 600px) {
+  .nav a:not(:last-child) {display: none;}
+  .nav a.icon {
+    padding: 2%;
+    float: right;
+    align-self: center;
+    display: block;
+    color: #dde6ed;
+    font-size: 1.3em;
+    }
+}
+ /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .nav.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+    background: linear-gradient(
+    36deg,
+    rgba(39, 55, 77, 1) 0%,
+    rgba(82, 110, 130, 1) 56%,
+    rgba(157, 178, 191, 1) 100%
+    );
+  }
+  .nav.responsive .navA {
+    float: none;
+    display: block;
+    border: 2px solid white;
+    text-align: left;
+  }
+}
 
 /* --- CAROUSEL DE PELICULAS --- */
-
+.movies {
+  margin: 0 2%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .movie {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 1%;
-  width: 14vw;
-  height: 44vh;
+  width: 50mm;
+  height: 75mm;
   background-image: url(../img/jaws.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,6 +151,17 @@ body {
 .movieInfo {
   color: white;
   padding: 2%;
+}
+
+/* --- seccion de ventas --- */
+.sales {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1% 0;
+  padding: 2% 10%;
+  background-color: #27374D;
+  color: white;
 }
 
 /* --- ABM form --- */
@@ -168,7 +223,19 @@ body {
     background-color: #dde6ed;
     width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
     height: 50px;
+}
+
+/* --- animation for the movie information --- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @keyframes fadeDownOut {
   0% {
