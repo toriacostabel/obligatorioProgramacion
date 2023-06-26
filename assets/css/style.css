@@ -35,7 +35,7 @@ body {
 
 .main {
   height: 100vh;
-  margin-top: 45px;
+  margin-top: 40px;
   padding-top: 20px;
 }
 
@@ -117,15 +117,14 @@ body {
     border: 1px; ;
     margin-top: 0.5%;
     margin-left: 1%;
-    width: 60vw;
+    width: 25vw;
     height: 60vh;
 }
 .inputContainer {
     display: flex;
     flex-direction: column;    
-    width: 50%;
-    height: 50px;
-    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px;
 }
 
 .newMovieInput {
@@ -140,13 +139,16 @@ body {
     background-color: #dde6ed;
 }
   /* Drop Img */
+  .newMovieUrl{
+    padding-top: 10px;
+    width: 100%;
+  }
   .dropZone {
     border: 2px dashed #ccc;
-    padding: 80px;
+    padding-top: 40px;
     text-align: center;
     cursor: pointer;
   }
-
   
   /* Estilos para el párrafo de información de la imagen */
   #imageInfo {
