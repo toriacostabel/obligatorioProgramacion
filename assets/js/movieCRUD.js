@@ -1,130 +1,74 @@
-// Obtiene los elementos de "movieForm" dentro de la lista de peliculas
-let movieData = document.getElementById(".movieForm");
-let movies = [];
+let container = document.querySelector(".carousel");
 
+//Al cargar la página
+window.addEventListener('load', function () {
+  // Obtener las peliculas almacenadas en localStorage
+  let savedMovies = obtainMoviesFromLocalStorage();
+  // Cargar las peliculas en la página
+  savedMovies.length > 0 ? loadMovies(savedMovies) : loadMovies(movies);
+});
 
-// Crea el objeto movie y carga los datos obtenidos
-function movieStrcture() {
-    let movie = {
-        id: tmpId,
-        img: tmpImg,
-        name: tmpName,
-        year: tmpYear,
-        cost: tmpCost,
-        genre1: tmpGenre1,
-        genre2: tmpGenre2,
-        genre3: tmpGenre3,
-        rate: tmpRate,
-        director: tmpDirector
-    };
-
-    return movie;
+// Convierte ruta de la imagen ya que la misma al ser obtenida desde el index, apunta desde la ubicación del
+// mismo.
+function convertirRuta(ruta) {
+  if (ruta.startsWith("./")) {
+    ruta = "./../" + ruta.substring(2);
+  }
+  return ruta;
 }
 
-// Función para cargar películas desde el HTML
-function newData() {
-    let movieData = [];
-
-    // Recorre los elementos y extrae los datos
-    let tmpId = document.getElementById(movieID);
-    let tmpImg = document.getElementById(movieUrl);
-    let tmpName = document.getElementById(movieName);
-    let tmpYear = document.getElementById(movieYear);
-    let tmpCost = document.getElementById(movieCost);
-    let tmpGenre1 = document.getElementById(movieGenre1);
-    let tmpGenre2 = document.getElementById(movieGenre2);
-    let tmpGenre3 = document.getElementById(movieGenre3);
-    let tmpRate = document.getElementById(rate);
-    let tmpDirector = document.getElementById(movieDirector);
-
-    let movie = movieStructure(
-        tmpId,
-        tmpImg,
-        tmpName,
-        tmpYear,
-        tmpCost,
-        tmpGenre1,
-        tmpGenre2,
-        tmpGenre3,
-        tmpRate,
-        tmpDirector
-    );
-    return movies; // Devuelve el array de películas
+function loadMovies(array) {
+  container.innerHTML = "";
+  array.forEach((movie) => {
+    container.innerHTML += retornarCardHTML(movie);
+  });
 }
 
 // Función para dar alta de película
-function newMovie() {
-    // Guardar los datos en el Local Storage
-    localStorage.setItem('movies', JSON.stringify(movies));
+function newMovie(movies) {
+  // Guardar los datos en el Local Storage
+  localStorage.setItem('movies', JSON.stringify(movies));
 }
 
-// Función para leer y mostrar película
+document.querySelector("#newMovieForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  //Obtener los valores del form
+  let name = document.querySelector("#movieName").value;
+  let time = document.querySelector("#movieTime").value;
+  let year = document.querySelector("#movieYear").value;
+  let cost = document.querySelector("#movieCost").value;
+  let genre = document.querySelector("#movieGenre").value;
+  let rating = document.querySelector("#movieRating").value;
+  let director = document.querySelector("#movieDirector").value;
+  let img = document.querySelector("#movieImg");
 
-function readMovie() {
-    let tmpId = document.getElementById("movieID");
-    // Buscar la película por su id
-    for (let i = 0; i < movies.length; i++) {
-        tmpMovie = movies[i];
-        if (tmpMovie[i][0] === tmpId) {
-            return
-            `<div class="div-movieCard">
-                <div class="id"><p>${tmpMovie.id}</p></div>
-                <div class="imagen"><img src='${tmpMovie.img}'></img></div>
-                <div class="name"><p>${tmpMovie.name}</p></div>
-                <div class="year"><p>${tmpMovie.year}</p></div>
-                <div class="cost"><p>${tmpMovie.cost}</p></div>
-                <div class="genre1"><p>${tmpMovie.genre1}</p></div>
-                <div class="genre2"><p>${tmpMovie.genre2}</p></div>
-                <div class="genre3"><p>${tmpMovie.genre3}</p></div>
-                <div class="rate"><p>${tmpMovie.rate}</p></div>
-                <div class="director"><p>${tmpMovie.director}</p></div>
-            </div>`
-                ;
-        }
-    }
-}
-// Función para actualizar película
-function updateMovie() {
-    let movie = movies.find(movie => movie.id === id);
-    let movieData = movieList.getElementsByClassName("movie");
+  function obtainMoviesFromLocalStorage() {
+    let moviesString = localStorage.getItem('movies');
+    return moviesString ? JSON.parse(moviesString) : [];
+  }
 
-    for (let i = 0; i < movieData.length; i++) {
-        const tmpMovie = array[i];
-        if (movie == tmpMovie[0]) {
-            newData();
-
-        }
-    }
-
-}
-function deleteMovie() {
-}
-function allowDrop(event) {
-    event.preventDefault();
-}
-
-function handleDrop(event) {
-    event.preventDefault();
-
-    var file = event.dataTransfer.files[0];
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-        var imageInfo = document.getElementById("imageInfo");
-        imageInfo.innerText = "Imagen ingresada: " + file.name;
-        document.getElementById("urlInput").value = "";
-    };
-
-    reader.readAsDataURL(file);
-}
-
-function handleInputChange() {
-    var urlInput = document.getElementById("urlInput");
-    var imageInfo = document.getElementById("imageInfo");
-
-    if (urlInput.value) {
-        imageInfo.innerText = "Imagen ingresada: " + urlInput.value;
-    } else {
-        imageInfo.innerText = "";
-    }
-}
+  let moviesStorage = obtainMoviesFromLocalStorage();
+  let tmpId = moviesStorage.length > 0 ? moviesStorage.length : movies.length;
+  // Crear un nuevo objeto movie
+  let movie = {
+    id: tmpId + 1,
+    name: name,
+    time: time,
+    year: year,
+    cost: cost,
+    genre1: genre,
+    rating: rating,
+    director: director,
+    img: "./img/" + img.slice(12)
+  };
+  // Agregar la nueva pelicula al array
+  if (moviesStorage.length <= 0) {
+    movies.push(movie);
+    addMoviesAtLocalStorage(movies);
+  } else {
+    moviesStorage.push(movie);
+    addMoviesAtLocalStorage(moviesStorage);
+  }
+  alert("Película agregada correctamente");
+  loadMovies(moviesStorage);
+});
