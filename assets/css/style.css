@@ -35,7 +35,7 @@ body {
 
 .main {
   height: 100vh;
-  margin-top: 75px;
+  margin-top: 40px;
   padding-top: 20px;
 }
 
@@ -61,23 +61,25 @@ body {
 }
 .navA {
   color: #dde6ed;
-  padding: 1.5% 2%;
+  padding: 0.8%;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.8em;
+  font-size: 1.2em;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .navA:hover {
   background-color: #526d82;
 }
+
 /* --- CAROUSEL DE PELICULAS --- */
 
 .movie {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 1%;
-  width: 18vw;
-  height: 56vh;
-  background-image: url(../img/jaws.jpg);
+  width: 14vw;
+  height: 44vh;
+  background-image: url();
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -108,43 +110,34 @@ body {
 }
 
 /* --- ABM form --- */
-#bodySettings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .newMovieForm {
-    border: 1px solid white;
-    width: 80vw;
-    height: 70vh;
-}
-.inputContainer {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-}
-.newMovieInput {
-    font-style: italic;
-    color: #27374D;
-    border: none;
-    outline: none;
-    border-radius: 5em;
-    padding: 2%;
-    font-size: 1em;
-    background-color: ;
+  display: flex;
+  flex-direction: column;
+  border: 1px;
+  margin-top: 0.5%;
+  margin-left: 1%;
+  width: 25vw;
+  height: 60vh;
 }
 
-/* --- animation for the movie information --- */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+}
+
+.newMovieInput {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  color: #27374d;
+  border: none;
+  outline: none;
+  border-radius: 0.7em;
+  padding: 2%;
+  font-size: 1em;
+  background-color: #dde6ed;
 }
 
 @keyframes fadeDownOut {
@@ -164,11 +157,10 @@ body {
 }
 
 .movieInformation:hover {
-  opacity: 0.5;
-  animation: fadeUp 0.3s forwards;
+  opacity: 3;
+  animation: fadeUp 0.5s forwards;
 }
 
 .movieInformation:not(:hover) {
   animation: fadeDownOut 0.3s forwards;
 }
-

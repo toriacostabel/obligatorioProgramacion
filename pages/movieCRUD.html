@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="keywords" content="must watch, streaming, peliculas, movies, cine, cartelera, cinema"/>
-    <meta name="description" content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas."/>
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <script src="../assets/js/movieCRUD.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="must watch, streaming, peliculas, movies, cine, cartelera, cinema"
+    />
+    <meta
+      name="description"
+      content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas."
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script defer src="../assets/js/movieCRUD.js"></script>
     <title>Must Watch - Settings</title>
   </head>
 
   <body class="body" id="bodySettings">
-  <!-- NAVEGADOR -->
+    <!-- NAVEGADOR -->
     <nav class="nav" id="navSettings">
       <div class="navLinks" id="navLinks">
         <a href="../index.html" class="navA" id="aHome">Home</a>
@@ -26,44 +32,96 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="main" id="mainSettings">
-      <!-- CARGAR IMAGEN -->
-      <div class="drop-area" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
-        <span>Suelta aquí tu archivo</span>
-        <input type="file" id="imageInput" accept="image/*" onchange="handleImage(event)" style="display: none">
-        <button onclick="openFileChooser()">Cargar imagen</button>
-        <div id="file-name"></div>
-      </div>
       <!-- form to upload new movie-->
-      <form action="post" class="newMovieForm" id="newMovieForm">
-        <!-- movie id -->
-        <div class="inputContainer newMovieId" id="newMovieId">
-          <label for="movieID">ID:</label>
-          <input type="number" class="newMovieInput movieID" id="movieID" placeholder="Ingresa un codigo" required>
-        </div>
+      <form class="newMovieForm" id="newMovieForm">
         <!-- movie name -->
         <div class="inputContainer newMovieName" id="newMovieName">
-          <label for="movieName">Nombre:</label>
-          <input type="text" class="newMovieInput movieName" id="movieName" placeholder="Nombre de la pelicula" required>
+          <input
+            type="text"
+            class="newMovieInput movieName"
+            id="movieName"
+            placeholder="Nombre de la pelicula"
+            required
+          />
+        </div>
+        <!--movie time-->
+        <div class="inputContainer newMovieTime" id="newMovieTime">
+          <input
+            type="number"
+            class="newMovieInput movieTime"
+            id="movieTime"
+            placeholder="Duracion de la pelicula"
+          />
         </div>
         <!-- movie year-->
         <div class="inputContainer newMovieYear" id="newMovieYear">
-          <label for="movieYear">Año:</label>
-          <input type="year" class="newMovieInput movieYear" id="movieYear" placeholder="Año de estreno" required>
+          <input
+            type="year"
+            class="newMovieInput movieYear"
+            id="movieYear"
+            placeholder="Año de estreno"
+            required
+          />
+        </div>
+        <!-- movie cost -->
+        <div class="inputContainer newMovieCost" id="newMovieCost">
+          <input
+            type="number"
+            class="newMovieInput movieCost"
+            id="movieCost"
+            placeholder="Precio de la pelicula"
+            required
+          />
+        </div>
+        <!--movie genre-->
+        <div class="inputContainer newMovieGenre1" id="newMovieGenre1">
+          <input
+            type="text"
+            class="newMovieInput movieGenre1"
+            id="movieGenre"
+            placeholder="Género"
+            required
+          />
+        </div>
+        <!-- movie rating-->
+        <div class="inputContainer newMovieRating" id="newMovieRating">
+          <input
+            type="number"
+            class="newMovieInput MovieRating"
+            id="movieRating"
+            placeholder="Calificación del 1 al 5"
+            required
+          />
         </div>
         <!-- movie director -->
         <div class="inputContainer newMovieDirector" id="newMovieDirector">
-          <label for="movieDirector">Director:</label>
-          <input type="text" class="newMovieInput movieDirector" id="movieDirector" placeholder="Nombre del director" required>
-        </div>
-        <!-- movie price -->
-        <div class="inputContainer newMoviePrice" id="newMoviePrice">
-          <label for="moviePrice">Precio:</label>
-          <input type="number" class="newMovieInput moviePrice" id="moviePrice" placeholder="Precio de la pelicula" required>
+          <input
+            type="text"
+            class="newMovieInput movieDirector"
+            id="movieDirector"
+            placeholder="Nombre del director"
+            required
+          />
         </div>
         <!-- movie poster -->
+        <div class="inputContainer newMovieImg" id="movieImg">
+          <input
+            type="file"
+            class="newMovieInput movieImg"
+            id="movieImg"
+            placeholder="Ingresar imagen desde archivo"
+            required
+          />
+        </div>
+        <!-- Botón para agregar película -->
+        <input class="btnSave" type="submit" value="Guardar" />
+        <!-- <button>Cancelar</button> -->
       </form>
     </main>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c5c5925f238471540865afd7c3de157b503edc4
     <!-- APARTADO -->
     <aside class="aside" id="asideSettings"></aside>
     <!-- PIE DE PAGINA -->
