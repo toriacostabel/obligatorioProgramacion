@@ -23,6 +23,20 @@ function convertirRuta(ruta) {
   return ruta;
 }
 
+function retornarCardHTML(movie) {
+  return `<div class="movie">
+    <div class="img"><img src='${movie.img}' class="movies"></div>
+    <div class="name"><p>${movie.name}</p></div>
+    <div class="time"><p>${movie.time}</p></div>
+    <div class="year"><p>${movie.year}</p></div>
+    <div class="cost"><p>${movie.cost}</p></div>
+    <div class="genre"><p>${movie.genre}</p></div>
+    <div class="rating"><p>${movie.rating}</p></div>
+    <div class="director"><p>${movie.director}</p></div>
+    <div class="buy"><button id="${movie.id}">Comprar</button></div>
+            </div>`;
+}
+
 function loadMovies(array) {
   container.innerHTML = "";
   array.forEach((movie) => {
@@ -62,7 +76,7 @@ document.querySelector("#newMovieForm").addEventListener("submit", (e) => {
     time: time,
     year: year,
     cost: cost,
-    genre1: genre,
+    genre: genre,
     rating: rating,
     director: director,
     img: "./img/" + img.slice(12)
