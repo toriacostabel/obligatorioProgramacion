@@ -1,5 +1,4 @@
 let container = document.querySelector(".carousel");
-let movieContainer = document.querySelector(".newMoviePreview");
 
 // Al cargar la página
 window.addEventListener('load', function () {
@@ -26,30 +25,6 @@ function convertirRuta(ruta) {
   return ruta;
 }
 
-<<<<<<< HEAD
-=======
-function retornarCardHTML(movie) {
-  return `<div class="movie">
-    <div class="img"><img class="poster" src='${movie.img}'></div>
-    <div class="name"><p>${movie.name}</p></div>
-    <div class="time"><p>${movie.time}</p></div>
-    <div class="year"><p>${movie.year}</p></div>
-    <div class="cost"><p>${movie.cost}</p></div>
-    <div class="genre"><p>${movie.genre}</p></div>
-    <div class="rating"><p>${movie.rating}</p></div>
-    <div class="director"><p>${movie.director}</p></div>
-    <div class="buy"><button id="${movie.id}">Comprar</button></div>
-            </div>`;
-}
-
-function loadMovies(array) {
-  container.innerHTML = "";
-  array.forEach((movie) => {
-    container.innerHTML += retornarCardHTML(movie);
-  });
-}
-
->>>>>>> a8d0764b092a73f7e44fd7b5428f4d42445b3bbf
 // Función para dar alta de película
 function setMoviesAtLocalStorage(movies) {
   // Guardar los datos en el Local Storage
@@ -126,24 +101,39 @@ function deleteMovie(id) {
   }
 }
 
-function retornarMoviePreview(movie) {
-  return `<div class="MoviePreview">
-    <div class="img"><img src='${movie.img}'></div>
-    <div class="name"><p>${movie.name}</p></div>
-    <div class="time"><p>${movie.time}</p></div>
-    <div class="year"><p>${movie.year}</p></div>
-    <div class="cost"><p>${movie.cost}</p></div>
-    <div class="genre"><p>${movie.genre}</p></div>
-    <div class="rating"><p>${movie.rating}</p></div>
-    <div class="director"><p>${movie.director}</p></div>
-            </div>`;
-}
+const previewContainer = document.querySelector("#newMoviePreview");
 
-function loadMovie(array) {
-  movieContainer.innerHTML = "";
-  array.forEach((movie) => {
-    movieContainer.innerHTML += retornarMoviePreview(movie);
-  });
-}
+// Escuchar el evento "input" en cada campo del formulario
+const formInputs = document.querySelectorAll(".newMovieInput");
+formInputs.forEach((input) => {
+  input.addEventListener("input", updatePreview);
+});
 
-loadMovie()
+function updatePreview() {
+  // Obtener los valores de los campos del formulario
+  const name = document.querySelector("#movieName").value;
+  const time = document.querySelector("#movieTime").value;
+  const year = document.querySelector("#movieYear").value;
+  const cost = document.querySelector("#movieCost").value;
+  const genre = document.querySelector("#movieGenre").value;
+  const rating = parseFloat(document.querySelector("#movieRating").value);
+  const director = document.querySelector("#movieDirector").value;
+  const img = document.querySelector("#movieImg").value;
+
+  // Crear el HTML de la vista previa con los datos obtenidos
+  const previewHTML = `
+    <div class="MoviePreview">
+      <div class="img"><img src="${img}"></div>
+      <div class="name"><p>${name}</p></div>
+      <div class="time"><p>${time}</p></div>
+      <div class="year"><p>${year}</p></div>
+      <div class="cost"><p>${cost}</p></div>
+      <div class="genre"><p>${genre}</p></div>
+      <div class="rating"><p>${rating}</p></div>
+      <div class="director"><p>${director}</p></div>
+    </div>
+  `;
+
+  // Actualizar el contenido del contenedor de vista previa con el HTML generado
+  previewContainer.innerHTML = previewHTML;
+}

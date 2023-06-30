@@ -18,11 +18,7 @@ function getMoviesFromLocalStorage() {
 
 function retornarCardHTML(movie) {
   return `<div class="movie">
-<<<<<<< HEAD
-    <div class="img"><img src='${movie.img}'></div>
-=======
     <div class="img"><img src='${movie.img}' class="poster"></div>
->>>>>>> a8d0764b092a73f7e44fd7b5428f4d42445b3bbf
     <div class="name"><p>${movie.name}</p></div>
     <div class="time"><p>${movie.time}</p></div>
     <div class="year"><p>${movie.year}</p></div>
