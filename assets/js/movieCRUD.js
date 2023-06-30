@@ -25,7 +25,7 @@ function convertirRuta(ruta) {
 
 function retornarCardHTML(movie) {
   return `<div class="movie">
-    <div class="img"><img src='${movie.img}' class="poster"></div>
+    <div class="img"><img class="poster" src='${movie.img}'></div>
     <div class="name"><p>${movie.name}</p></div>
     <div class="time"><p>${movie.time}</p></div>
     <div class="year"><p>${movie.year}</p></div>
