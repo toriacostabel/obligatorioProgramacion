@@ -7,6 +7,10 @@ window.addEventListener('load', function () {
   savedMovies.length > 0 ? loadMovies(savedMovies) : loadMovies(movies);
 });
 
+function setMoviesAtLocalStorage(movies) {
+  localStorage.setItem('movies', JSON.stringify(movies));
+}
+
 function getMoviesFromLocalStorage() {
   let moviesString = localStorage.getItem('productos');
   return moviesString ? JSON.parse(moviesString) : [];
@@ -14,7 +18,7 @@ function getMoviesFromLocalStorage() {
 
 function retornarCardHTML(movie) {
   return `<div class="movie">
-    <div class="img"><img src='${movie.img}' class="movies"></div>
+    <div class="img"><img src='${movie.img}'></div>
     <div class="name"><p>${movie.name}</p></div>
     <div class="time"><p>${movie.time}</p></div>
     <div class="year"><p>${movie.year}</p></div>
