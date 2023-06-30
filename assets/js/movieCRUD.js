@@ -26,6 +26,30 @@ function convertirRuta(ruta) {
   return ruta;
 }
 
+<<<<<<< HEAD
+=======
+function retornarCardHTML(movie) {
+  return `<div class="movie">
+    <div class="img"><img class="poster" src='${movie.img}'></div>
+    <div class="name"><p>${movie.name}</p></div>
+    <div class="time"><p>${movie.time}</p></div>
+    <div class="year"><p>${movie.year}</p></div>
+    <div class="cost"><p>${movie.cost}</p></div>
+    <div class="genre"><p>${movie.genre}</p></div>
+    <div class="rating"><p>${movie.rating}</p></div>
+    <div class="director"><p>${movie.director}</p></div>
+    <div class="buy"><button id="${movie.id}">Comprar</button></div>
+            </div>`;
+}
+
+function loadMovies(array) {
+  container.innerHTML = "";
+  array.forEach((movie) => {
+    container.innerHTML += retornarCardHTML(movie);
+  });
+}
+
+>>>>>>> a8d0764b092a73f7e44fd7b5428f4d42445b3bbf
 // Función para dar alta de película
 function setMoviesAtLocalStorage(movies) {
   // Guardar los datos en el Local Storage
