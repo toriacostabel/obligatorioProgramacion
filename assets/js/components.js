@@ -1,3 +1,0 @@
-//carousel
-
-//hamburguer menu
