@@ -28,10 +28,17 @@ window.addEventListener('load', function () {
   }
 });
 
+loadUsers(users);
+
 function getMoviesFromLocalStorage() {
   let moviesString = localStorage.getItem('movies');
   return moviesString ? JSON.parse(moviesString) : [];
 }
+
+let totalPurchasesFranco = document.getElementById(`${users[0].id}`);
+let totalPurchasesRenata = document.getElementById(`${users[1].id}`);
+let totalPurchasesIgnacio = document.getElementById(`${users[2].id}`);
+let totalPurchase = 0;
 
 
 function retornarCardHTML(movie) {
