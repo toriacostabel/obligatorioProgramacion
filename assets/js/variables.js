@@ -8,7 +8,7 @@ let movies = [
 ];
 
 let movie = {
-    id: 0,
+    id: Math.floor(Math.random() * 900000 + 100000),
     name: "",
     time: 0,
     year: 0,
