@@ -1,8 +1,28 @@
+let ventas = [
+  {
+      pelicula: 'Barbie',
+      cantidadComprada: 3,
+      ingresosPorPelicula: 800,
+      ingresosTotales: 2400
+  }, {
+      pelicula: 'Barbie',
+      cantidadComprada: 3,
+      ingresosPorPelicula: 800,
+      ingresosTotales: 2400
+  }, {
+      pelicula: 'Barbie',
+      cantidadComprada: 3,
+      ingresosPorPelicula: 800,
+      ingresosTotales: 2400
+  }
+]
+let tablaVentas = crearTablaVentas(ventas);
+
 let container = document.querySelector(".tablaDeVentas");
 container.innerHTML = tablaVentas;
-window.addEventListener('DOMContentLoaded', function () { 
-  let savedVentas = getVentasFromLocalStorage();
-  savedVentas.length > 0 ? loadVentas(savedVentas) : loadVentas(ventas);
+window.addEventListener('DOMContentLoaded', function () {
+    let savedVentas = getVentasFromLocalStorage();
+    savedVentas.length > 0 ? loadVentas(savedVentas) : loadVentas(ventas);
 });
 
 function getVentasFromLocalStorage() {
@@ -12,8 +32,7 @@ function getVentasFromLocalStorage() {
 
 // TABLA DE ESTADISTICAS DE VENTAS
 function crearTablaVentas(ventas) { 
-    // definir los encabezados de la tabla
-      let tablaHTML = `
+    let tablaHTML = `
       <table>
         <thead>
           <tr>
@@ -25,9 +44,9 @@ function crearTablaVentas(ventas) {
         </thead>
         <tbody>
         `;
-      for (let venta of ventas) {
-          let {pelicula, cantidadComprada, ingresosPorPelicula, ingresosTotales} = venta;
-          let filaHTML = `
+    for (let venta of ventas) {
+        let {pelicula, cantidadComprada, ingresosPorPelicula, ingresosTotales} = venta;
+        let filaHTML = `
             <tr>
               <td>${pelicula}</td>
               <td>${cantidadComprada}</td>
@@ -35,22 +54,13 @@ function crearTablaVentas(ventas) {
               <td>${ingresosTotales}</td>
             </tr>
           `;
-          tablaHTML += filaHTML;
-      }
-      tablaHTML += `
+        tablaHTML += filaHTML;
+    }
+    tablaHTML += `
         </tbody>
       </table>
       `;
-      return tablaHTML;
-  }
-  let ventas = [
-    {pelicula: 'Barbie', cantidadComprada: 3, ingresosPorPelicula: 800, ingresosTotales: 2400 },
-    {pelicula: 'Barbie', cantidadComprada: 3, ingresosPorPelicula: 800, ingresosTotales: 2400 },
-    {pelicula: 'Barbie', cantidadComprada: 3, ingresosPorPelicula: 800, ingresosTotales: 2400 };
-  ]
-  let tablaVentas = crearTablaVentas(ventas);
-  console.log(tablaVentas);
-  
-  
-  
-  
+    return tablaHTML;
+}
+
+console.log(tablaVentas);
