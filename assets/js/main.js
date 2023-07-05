@@ -16,7 +16,7 @@ function getMoviesFromLocalStorage() {
   return moviesString ? JSON.parse(moviesString) : [];
 }
 
-function retornarCardHTML(movie) {
+function returnMoviesHTML(movie) {
   return `<div class="movie">
     <div class="img"><img src='${movie.img}' class="poster"></div>
     <div class="name"><p>${movie.name}</p></div>
