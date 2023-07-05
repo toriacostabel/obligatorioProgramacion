@@ -103,7 +103,7 @@ body {
 
 /* --- CAROUSEL DE PELICULAS --- */
 
-.carousel {
+.container {
     display: flex;
 }
 .movie {
