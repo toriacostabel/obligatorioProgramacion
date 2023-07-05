@@ -1,4 +1,4 @@
-let container = document.querySelector(".carousel");
+let container = document.querySelector(".container");
 
 //Al cargar la página
 window.addEventListener('load', function () {
@@ -45,7 +45,7 @@ function loadMovies(array) {
 }
 
 // Función para dar alta de película
-function newMovie(movies) {
+function setMoviesAtLocalStorage(movies) {
   // Guardar los datos en el Local Storage
   localStorage.setItem('movies', JSON.stringify(movies));
 }
@@ -68,10 +68,10 @@ document.querySelector("#newMovieForm").addEventListener("submit", (e) => {
   }
 
   let moviesStorage = getMoviesFromLocalStorage();
-  let tmpId = moviesStorage.length > 0 ? moviesStorage.length : movies.length;
-  // Crear un nuevo objeto movie
+  let tmpId = Math.floor(Math.random() * 900000 + 100000);
+  // Carga los valores en el objeto movie
   let movie = {
-    id: tmpId + 1,
+    id: tmpId,
     name: name,
     time: time,
     year: year,
@@ -102,14 +102,14 @@ function deleteMovie(id) {
   let moviesStorage = getMoviesFromLocalStorage();
 
   // Buscar el índice del movie en el array
-  let indice = moviesStorage.findIndex((movie) => parseInt(movie.codigo) === id);
+  let index = moviesStorage.findIndex((movie) => parseInt(movie.id) === id);
 
-  if (indice !== -1) {
+  if (index !== -1) {
     // Eliminar el movie del array
-    moviesStorage.splice(indice, 1);
+    moviesStorage.splice(index, 1);
 
     // Guardar los movies actualizados en el LocalStorage
-    saveMoviesAtLocalStorage(moviesStorage);
+    addMoviesAtLocalStorage(moviesStorage);
 
     // Recargar la lista de movies en la página
     loadMovies(moviesStorage);
