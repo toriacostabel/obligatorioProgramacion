@@ -20,7 +20,7 @@ function retornarCardHTML(movie) {
     <div class="img"><img src='${movie.img
     }' class="poster"></div>
     <div class="movieInformation" id="movieInformation">
-      <div class="name"><p class="infoP movieName">${movie.name
+      <div class="name"><p class="infoP">${movie.name
     }</p></div>
       <div class="time"><p class="infoP showOnHover">Duration: ${movie.time
     }</p></div>
@@ -39,7 +39,6 @@ function retornarCardHTML(movie) {
     </div>
   </div>`;
 }
-
 function loadMovies(array) {
   container.innerHTML = "";
   array.forEach((movie) => {
@@ -47,3 +46,5 @@ function loadMovies(array) {
   });
   activarClickEnBotones();
 }
+
+

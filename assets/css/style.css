@@ -6,11 +6,12 @@
 
 /* --- GENERAL SETTINGS --- */
 
-/*  COLOR PALLETE:
-    #27374D --- light navy blue
-    #526D82 --- light greyish blue
-    #9DB2BF --- pale greyish blue
-    #DDE6ED --- very pale baby blue
+/*  COLOR PALTETE:
+    #053F5C --- PRUSSIAN BLUE
+    #429EBD --- BOSTON BLUE
+    #9FE7F5 --- BLIZZARD BLUE
+    #F7AD19 --- DARK TANGERINE
+    #F27F0C --- TANGERINE
 */
 
 /* FONT */
@@ -24,53 +25,75 @@
 body {
   font-family: "Jura";
   height: 100%;
-  background: rgb(39, 55, 77);
-  background: linear-gradient(
-    36deg,
-    rgba(39, 55, 77, 1) 0%,
-    rgba(82, 110, 130, 1) 56%,
-    rgba(157, 178, 191, 1) 100%
-  );
+  background-color: #242526;
 }
 
 .main {
-  height: 100vh;
-  margin-top: 40px;
-  padding-top: 20px;
+
 }
 
 /* --- DESKTOP VIEWPORT FIRST --- */
 
 /* --- NAVEGADOR --- */
-.nav {
-  background: rgb(39, 55, 77);
-  background: linear-gradient(
-    36deg,
-    rgba(39, 55, 77, 1) 0%,
-    rgba(82, 110, 130, 1) 56%,
-    rgba(157, 178, 191, 1) 100%
-  );
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 100;
+.topnav {
+  background-color: #f27f0c;
+  overflow: hidden;
 }
-.navLinks {
-  display: flex;
-  margin: 0 0 0 5%;
-}
-.navA {
-  color: #dde6ed;
-  padding: 0.8%;
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #080907;
+  padding: 1em 1.5em;
+  font-size: 1.3em;
+  font-weight: 900;
+  text-align: center;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 1.2em;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-.navA:hover {
-  background-color: #526d82;
+
+.topnav a:hover {
+  background-color: #f7ad19;
+  color: black;
 }
+
+.topnav a.active {
+  background-color: #f7ad19;
+  color: #080907;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f27f0c;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 
 /* --- CAROUSEL DE PELICULAS --- */
 
@@ -80,32 +103,13 @@ body {
 .movie {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 1%;
-  width: 14vw;
+  width: 15vw;
   height: 40vh;
   display: flex;
   position: relative;
   flex-direction: column;
-  border: 2px solid white;
 }
-.movieInformation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.movieName {
-  border: 1px solid white;
-  color: blue;
-  align-self: flex-end;
-}
+
 .showOnHover{
   display: none;
 }
@@ -115,24 +119,15 @@ body {
   object-fit: cover;
   position: relative;
 }
-.poster {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.infoP {
-  color: white;
-}
 
-.comprar {
-  color: white;
-  background-color: black;
+/* --- TABLA CON ESTADISTICAS DE VENTAS --- */
+.tablaDeVentas {
+  display: flex;
+  justify-content: center;
 }
-
-/* tabla de ventas */
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 80vw;
 }
 
 th, td {
@@ -192,7 +187,6 @@ tr:hover {
     margin: 0 2vw;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    border: 1px solid blue;
   }
   .movie{
     margin: 1vw;
@@ -216,12 +210,15 @@ tr:hover {
 }
 @media (max-width:600px){
   .movie{
-    margin: 1vw;
-    width: 65vw;
-    height: 75vh;
+    margin: 0;
+    width: 40vw;
+    height: 52vh;
   }
 }
 @media (max-width:480px) {
+  .main {
+    margin: 0;
+  }
   .movie{
     width: 78vw;
     height: 70vh;
