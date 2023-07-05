@@ -17,7 +17,7 @@ function retornarCardHTML(movie) {
         movie.img
     }' class="poster"></div>
     <div class="movieInformation" id="movieInformation">
-      <div class="name"><p class="infoP movieName">${
+      <div class="name"><p class="infoP">${
         movie.name
     }</p></div>
       <div class="time"><p class="infoP showOnHover">Duration: ${
@@ -52,3 +52,5 @@ function loadMovies(array) {
     });
     activarClickEnBotones();
 }
+
+
