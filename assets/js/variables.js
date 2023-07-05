@@ -1,5 +1,5 @@
 let movies = [
-    { id: 1, name: "Scream", time: 123, year: 2023, cost: 150, genre: "Slasher", rating: 4, director: "Tyler Gillet", img: "../assets/img/scream.png" },
+    { id: 1, name: "Scream", time: 123, year: 2023, cost: 150, genre: "Slasher", rating: 4, director: "Tyler Gillet", img: "../assets/img/scream.jpg" },
     { id: 2, name: "Barbie", time: 114, year: 2023, cost: 200, genre: "Comedy", rating: 4.5, director: "Greta Gerwig", img: "../assets/img/barbie.jpg" },
     { id: 3, name: "Dead Poets Society", time: 128, year: 1989, cost: 100, genre: "Drama", rating: 5, director: "Peter Weir", img: "../assets/img/deadPoetsSociety.jpg" },
     { id: 4, name: "Bicentennial Man", time: 132, year: 1999, cost: 100, genre: "Drama", rating: 5, director: "Chris Columbus", img: "../assets/img/bicentennialMan.jpg" },
@@ -8,7 +8,7 @@ let movies = [
 ];
 
 let movie = {
-    id: 0,
+    id: Math.floor(Math.random() * 900000 + 100000),
     name: "",
     time: 0,
     year: 0,
