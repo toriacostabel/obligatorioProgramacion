@@ -52,3 +52,5 @@ function loadMovies(array) {
     });
     activarClickEnBotones();
 }
+
+
