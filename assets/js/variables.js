@@ -7,6 +7,12 @@ let movies = [
     { id: 6, name: "Transformers", time: 144, year: 2007, cost: 500, genre: "Action", rating: 4.5, director: "Michael Bay", img: "../assets/img/transformers.jpg" }
 ];
 
+let users = [
+    { id: 0, name: "Franco", movies: [] },
+    { id: 1, name: "Renata", movies: [] },
+    { id: 2, name: "Ignacio", movies: [] },
+];
+
 let movie = {
     id: Math.floor(Math.random() * 900000 + 100000),
     name: "",

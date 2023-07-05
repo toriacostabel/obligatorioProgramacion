@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="keywords" content="must watch, streaming, peliculas, movies, cine, cartelera, cinema"/>
-        <meta name="description" content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas."/>
 
-        <title>Must Watch - Home</title>
-        <!-- stylesheet -->
-        <link
-        rel="stylesheet" href="./assets/css/style.css"/>
-        <!-- javascript-->
-        <script src="./assets/js/variables.js"></script>
-        <script defer src="./assets/js/main.js"></script>
-    </head>
-    <title>Must Watch - Home</title>
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- javascript-->
-    <script src="./assets/js/styling.js"></script>
-    <script src="./assets/js/variables.js"></script>
-    <script defer src="./assets/js/main.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="must watch, streaming, peliculas, movies, cine, cartelera, cinema" />
+  <meta name="description"
+    content="Must Watch es una plataforma de streaming en la que puedes ver, comprar y calificar peliculas." />
+
+  <title>Must Watch - Home</title>
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- javascript-->
+  <script src="./assets/js/variables.js"></script>
+  <script defer src="./assets/js/main.js"></script>
+</head>
 
   <body class="body" id="bodyIndex">
     <!-- NAVEGADOR -->
-    <nav class="topnav" id="myTopnav">
-      <a href="./index.html" class="active">HOME</a>
-      <a href="./pages/movieStats.html">SALES</a>
-      <a href="./pages/movieCRUD.html">SETTINGS</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </nav>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- ENCABEZADO -->
-        <header class="header" id="headerIndex"></header>
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="main" id="mainIndex">
-      <div class="movies" id="movies">
-        <div class="carousel">
-        </div>
+    <nav class="nav" id="navIndex">
+      <div class="navLinks" id="navLinks">
+        <a href="./index.html" class="navA" id="aHome">HOME</a>
+        <a href="./pages/movieStats.html" class="navA" id="aSales">SALES</a>
+        <a href="./pages/movieCRUD.html" class="navA" id="aCrud">SETTINGS</a>
       </div>
-    </main>
+    </nav>
 
-        <!-- PIE DE PAGINA -->
-        <footer class="footer" id="footerIndex"></footer>
-    </body>
+  <!-- ENCABEZADO -->
+  <header class="header" id="headerIndex"></header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main" id="mainIndex">
+    <div class="users" id="indexUsers">
+      <label for="users-List">Select a user:</label>
+      <!-- User selection combo list -->
+      <select id="users-List"></select>
+    </div>
+    <div class="movies" id="movies">
+      <div class="carousel">
+      </div>
+    </div>
+  </main>
+
+  <!-- PIE DE PAGINA -->
+  <footer class="footer" id="footerIndex"></footer>
+</body>
+
 </html>

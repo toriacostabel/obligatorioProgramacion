@@ -1,10 +1,11 @@
-let container = document.querySelector(".carousel");
+container = document.querySelector(".contenedor");
 
 // Al cargar la página
 window.addEventListener('load', function () {
   // Obtener los productos almacenados en localStorage
   let savedMovies = getMoviesFromLocalStorage();
-  // Si hay productos en el localStorage
+
+  // Si hay    en el localStorage
   if (savedMovies.length > 0) {
     // Cargar los productos en la página
     loadMovies(savedMovies)
@@ -23,6 +24,40 @@ function convertirRuta(ruta) {
     ruta = "./../" + ruta.substring(2);
   }
   return ruta;
+}
+
+// Creamos la card para cada producto con su imagen, nombre, precio y boton de eliminar y modificar.
+function retornarCardHTML(movie) {
+  return `<div class="movies">
+    <div class="img"><img src='${movie.img
+    }' class="poster"></div>
+    <div class="movieInformation" id="movieInformation">
+      <div class="name"><p class="infoP movieName">${movie.name
+    }</p></div>
+      <div class="time"><p class="infoP showOnHover">Duration: ${movie.time
+    }</p></div>
+      <div class="year"><p class="infoP showOnHover">${movie.year
+    }</p></div>
+      <div class="cost"><p class="infoP showOnHover">USD ${movie.cost
+    }</p></div>
+      <div class="genre"><p class="infoP showOnHover">Genre: ${movie.genre
+    }</p></div>
+      <div class="rating"><p class="infoP showOnHover">Rating: ${movie.rating
+    }</p></div>
+      <div class="director"><p class="infoP showOnHover">Director: ${movie.director
+    }</p></div>
+      <div class="buy"><button class="comprar showOnHover"id="${movie.id
+    }">Modificar</button></div>
+    </div>
+  </div>`;
+}
+
+// Función para agregar una tarjeta por cada producto que tengamos en el array que le pasamos
+function LoadMovies(array) {
+  container.innerHTML = "";
+  array.forEach((movie) => {
+    container.innerHTML += retornarCardHTML(movie);
+  });
 }
 
 // Función para dar alta de película
@@ -99,41 +134,4 @@ function deleteMovie(id) {
   } else {
     alert("No se encontró la pélícula");
   }
-}
-
-const previewContainer = document.querySelector("#newMoviePreview");
-
-// Escuchar el evento "input" en cada campo del formulario
-const formInputs = document.querySelectorAll(".newMovieInput");
-formInputs.forEach((input) => {
-  input.addEventListener("input", updatePreview);
-});
-
-function updatePreview() {
-  // Obtener los valores de los campos del formulario
-  const name = document.querySelector("#movieName").value;
-  const time = document.querySelector("#movieTime").value;
-  const year = document.querySelector("#movieYear").value;
-  const cost = document.querySelector("#movieCost").value;
-  const genre = document.querySelector("#movieGenre").value;
-  const rating = parseFloat(document.querySelector("#movieRating").value);
-  const director = document.querySelector("#movieDirector").value;
-  const img = document.querySelector("#movieImg").value;
-
-  // Crear el HTML de la vista previa con los datos obtenidos
-  const previewHTML = `
-    <div class="MoviePreview">
-      <div class="img"><img src="${img}"></div>
-      <div class="name"><p>${name}</p></div>
-      <div class="time"><p>${time}</p></div>
-      <div class="year"><p>${year}</p></div>
-      <div class="cost"><p>${cost}</p></div>
-      <div class="genre"><p>${genre}</p></div>
-      <div class="rating"><p>${rating}</p></div>
-      <div class="director"><p>${director}</p></div>
-    </div>
-  `;
-
-  // Actualizar el contenido del contenedor de vista previa con el HTML generado
-  previewContainer.innerHTML = previewHTML;
 }
