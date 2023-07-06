@@ -13,36 +13,34 @@ function getMoviesFromLocalStorage() {
 
 function retornarCardHTML(movie) {
     return `<div class="movie">
-    <div class="img"><img src='${
-        movie.img
-    }' class="poster"></div>
-    <div class="movieInformation" id="movieInformation">
-      <div class="name"><p class="infoP">${
-        movie.name
-    }</p></div>
-      <div class="time"><p class="infoP showOnHover">Duration: ${
-        movie.time
-    }</p></div>
-      <div class="year"><p class="infoP showOnHover">${
-        movie.year
-    }</p></div>
-      <div class="cost"><p class="infoP showOnHover">USD ${
-        movie.cost
-    }</p></div>
-      <div class="genre"><p class="infoP showOnHover">Genre: ${
-        movie.genre
-    }</p></div>
-      <div class="rating"><p class="infoP showOnHover">Rating: ${
-        movie.rating
-    }</p></div>
-      <div class="director"><p class="infoP showOnHover">Director: ${
-        movie.director
-    }</p></div>
-      <div class="buy"><button class="comprar showOnHover"id="${
-        movie.id
-    }">Comprar</button></div>
+    <img src="${movie.img}" alt="" class="poster">
+    <div class="name-price-trailer">
+        <div class="nameAndPrice">
+            <p class="name">${movie.name}</p>
+            <p class="price">${movie.cost}</p>
+        </div>
+        <button class="playTrailer">
+            <span class="playIcon"></span> 
+        </button>
     </div>
-  </div>`;
+    <table class="tablaMovie">
+        <thead>
+            <tr class="trMovie">
+                <th class="thMovie">length</th>
+                <th class="thMovie">rating</th>
+                <th class="thMovie">genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="trMovie">
+                <td class="tdMovie">${movie.time}</td>
+                <td class="tdMovie">${movie.rating}</td>
+                <td class="tdMovie">${movie.genre}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btnAgregarCarrito">Agregar al carrito</button>
+</div>`;
 }
 
 function loadMovies(array) {
@@ -52,5 +50,3 @@ function loadMovies(array) {
     });
     activarClickEnBotones();
 }
-
-

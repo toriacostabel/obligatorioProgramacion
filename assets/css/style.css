@@ -33,7 +33,7 @@ body {
 
 /* --- NAVEGADOR --- */
 .topnav {
-  background-color: #f27f0c;
+  background-color: #666666;
   overflow: hidden;
 }
 
@@ -50,12 +50,12 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #f7ad19;
+  background-color: #b5b5b5;
   color: black;
 }
 
 .topnav a.active {
-  background-color: #f7ad19;
+  background-color: #8c8c8c;
   color: #080907;
 }
 
@@ -81,7 +81,7 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    background-color: #f27f0c;
+    background-color: #8c8c8c;
   }
 
   .topnav.responsive a {
@@ -96,27 +96,121 @@ body {
 
 .carousel {
   display: flex;
+  margin: 2vh 2vw;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
+
+/* --- tarjeta de pelicula --- */
+
 .movie {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 1%;
-  width: 15vw;
-  height: 40vh;
   display: flex;
-  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  background-color: #080907;
+  color:#9FE7F5;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative; /* Added */
+  margin: 0.7vw;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.name-price-trailer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+}
+
+.nameAndPrice {
+  position: inherit;
+  top: -40%;
+  display: block;
+  border-collapse: collapse;
   flex-direction: column;
 }
 
-.showOnHover{
-  display: none;
-}
-.img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
+.name {
+  color: #9FE7F5;
+  font-size: 1.35em;
+  font-weight: bold;
+  margin-top: 25px;
 }
 
+.price {
+  font-size: 1.6em;
+  color: #9FE7F5;
+  margin-top: 5px;
+}
+
+.playTrailer {
+  position: absolute;
+  top: -15px; /* Adjust the value to position the button */
+  right: -15px; /* Adjust the value to position the button */
+  width: 48px; 
+  height: 48px; 
+  background-color: #F27F0C;
+  left: 75%;
+  top: -60%;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Added */
+}
+
+.playIcon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+}
+
+.tablaMovie {
+  position: relative;
+  top: -5%;
+  width: 100%;
+  background-color: #080907;
+}
+
+.trMovie{
+  background-color: #080907;
+}
+
+.thMovie,
+.tdMovie {
+  border: none;
+  color: #fff;
+  background-color: #080907;
+  padding: 5px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.btnAgregarCarrito {
+  color: #fff;
+  background-color: #000;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
 /* --- TABLA CON ESTADISTICAS DE VENTAS --- */
 .tablaDeVentas {
   display: flex;
@@ -179,48 +273,144 @@ tr:hover {
 
 /* --- MEDIA QUERIES FOR MOBILE VIEWPORTS --- */
 
-@media (max-width:960px) {
-  .carousel{ 
+@media (max-width: 960px) {
+  .carousel {
     margin: 0 2vw;
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-  .movie{
+  .movie {
     margin: 1vw;
-    width: 28vw;
-    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-}
-@media (max-width:760px){
-  .movie{
-    margin: 1vw;
-    width: 42vw;
-    height: 75vh;
+  .poster {
+    margin-top: 20px;
+    width:100%;
+    height: auto;
+    border-radius: 25px;
+    margin-bottom: 20px;
   }
-}
-@media (max-width:760px){
-  .movie{
-    margin: 1vw;
-    width: 42vw;
-    height: 75vh;
+  .name-price-trailer {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+  
+    position: relative;
   }
-}
-@media (max-width:600px){
-  .movie{
-    margin: 0;
-    width: 40vw;
-    height: 52vh;
+  .nameAndPrice {
+    display: flex;
+    flex-direction: column;
   }
-}
-@media (max-width:480px) {
-  .main {
-    margin: 0;
+  .name {
+    font-weight: bold;
+    
   }
-  .movie{
-    width: 78vw;
-    height: 70vh;
+  .price {
+    font-size: 16px;
+    color: #000;
+    margin-top: 5px;
+  }
+  .playTrailer {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 48px;
+    height: 48px;
+    background-color: #F27F0C;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .playIcon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+  }
+  .tablaMovie {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+  .trMovie {
+    background-color: #fff;
+  }
+  .thMovie,
+  .tdMovie {
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+  }
+  .botonComprar {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
   }
 }
 
+/* carrito y usuarios */
+.carrito {
+  border: 1px solid #ccc;
+  background-color: #080907;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
+.carrito h2 {
+  margin-top: 0;
+}
 
+.carrito-items {
+  margin-bottom: 10px;
+}
+
+.btn-vaciar-carrito {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.select-usuario {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.usuarios h2 {
+  margin-top: 0;
+}
+
+.usuarios select {
+  padding: 5px;
+}
+
+/* Estilos para los usuarios específicos */
+.usuarios select option[value="0"] {
+  background-color: lightblue;
+}
+
+.usuarios select option[value="1"] {
+  background-color: lightgreen;
+}
+
+.usuarios select option[value="2"] {
+  background-color: lightyellow;
+}
+
+.usuarios select option[value="3"] {
+  background-color: pink;
+}
