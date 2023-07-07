@@ -35,6 +35,9 @@ body {
 .topnav {
   background-color: #666666;
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
 }
 
 .topnav a {
@@ -91,7 +94,10 @@ body {
   }
 }
 
-
+.movies {
+  display: flex;
+  flex-direction: column;
+}
 /* --- CAROUSEL DE PELICULAS --- */
 
 .carousel {
@@ -108,7 +114,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 250px;
+  width: 220px;
   background-color: #080907;
   color:#9FE7F5;
   border-radius: 25px;
@@ -118,7 +124,7 @@ body {
 }
 
 .poster {
-  width: 100%;
+  width: 85%;
   height: auto;
   border-radius: 25px;
   margin-bottom: 20px;
@@ -200,7 +206,6 @@ body {
   text-align: left;
   text-transform: capitalize;
 }
-
 .btnAgregarCarrito {
   color: #fff;
   background-color: #000;
@@ -211,28 +216,55 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
+
+/* CARRITO */
+.cartAndUser{
+  width: 100%;
+  margin-top: 75px;
+}
+.carrito {
+  margin: 25px;
+  background-color: #242526;
+  width: 100%;
+}
+.carrito h2 {
+  color: white;
+}
+.usuarios {
+  margin: 25px;
+  background-color: #b5b5b5;
+}
+.carritoUsuario {
+  color: white;
+}
+
 /* --- TABLA CON ESTADISTICAS DE VENTAS --- */
-.tablaDeVentas {
+.tablaDeVentas{
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 table {
   border-collapse: collapse;
   width: 80vw;
+  border-radius: 30px;
 }
 
 th, td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #429EBD;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #F27F0C;
+}
+
+tr:nth-child(odd) {
+  background-color: #F7AD19;
 }
 
 tr:hover {
@@ -240,7 +272,7 @@ tr:hover {
 }
 
 
-/* --- ABM form --- */
+/* --- ABM FORM --- */
 
 .newMovieForm {
   display: flex;
@@ -350,67 +382,4 @@ tr:hover {
     padding: 5px;
     text-align: center;
   }
-  .botonComprar {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-}
-
-/* carrito y usuarios */
-.carrito {
-  border: 1px solid #ccc;
-  background-color: #080907;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.carrito h2 {
-  margin-top: 0;
-}
-
-.carrito-items {
-  margin-bottom: 10px;
-}
-
-.btn-vaciar-carrito {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.select-usuario {
-  margin-top: 10px;
-  padding: 5px;
-}
-
-.usuarios h2 {
-  margin-top: 0;
-}
-
-.usuarios select {
-  padding: 5px;
-}
-
-/* Estilos para los usuarios específicos */
-.usuarios select option[value="0"] {
-  background-color: lightblue;
-}
-
-.usuarios select option[value="1"] {
-  background-color: lightgreen;
-}
-
-.usuarios select option[value="2"] {
-  background-color: lightyellow;
-}
-
-.usuarios select option[value="3"] {
-  background-color: pink;
 }

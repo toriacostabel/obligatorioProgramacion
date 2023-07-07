@@ -81,3 +81,4 @@ function readUser() {
     }
     // Llamar a las funciones para cargar los datos desde el HTML
     loadUsers();
+}
